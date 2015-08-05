@@ -1,0 +1,156 @@
+<!DOCTYPE html> 
+<HTML>
+ <HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <TITLE> DES&&AES </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="罗帆">
+  <META NAME="Keywords" CONTENT="DES&&AES">
+  <META NAME="Description" CONTENT="">
+  <SCRIPT type="text/javascript" src="des.js"></SCRIPT>
+  <SCRIPT type="text/javascript" src="aes.js"></SCRIPT>
+ </HEAD>
+
+ <BODY>
+ <div style="width:960px;height:600px;">
+	<table align="center" width="100%" border="1" style='font-size:16px table-layout:fixed'><caption>DES加密解密</caption>
+	<td>DES加密
+	<div class = "desEplaintext">
+		<label>明文</label>
+		<input id="desEplaintext" type="text" name="desEplaintext" maxlength = "16" />
+	</div>
+	<div class = "desEkeytext">
+		<label>密钥</label>
+		<input id="desEkeytext" type="text" name="desEkeytext" maxlength = "16" />
+		<button name = "button" type="button" onclick="clickDesEncrypt()">加密</button>
+	</div>
+	<div class = "desEciphertext">
+		<label>密文</label>
+		<input id="desEciphertext" type="text" name="desEciphertext" />
+	</div>
+<!--	<div class = "desFileESelect">	
+	<input type="file" id="desEFile" name="desEFileS[]" multiple />  
+    <script type="text/javascript">  
+        var btn=document.getElementById('desEFile');  
+        btn.addEventListener('change', handleFileSelect, false);      
+    </script> 
+	</div>
+	<div class = "desFileEncrypt">
+		<button name = "button" type="button" onclick="desFileEncrypt()">文件加密</button>
+		<a href="" id="desEFileDownload">文件下载</a>
+	</div>
+-->	
+	</td>
+	<td>DES解密
+	<div class = "desDciphertext">
+		<label>密文</label>
+		<input id="desDciphertext" type="text" name="desDciphertext" maxlength = "16" />
+	</div>
+	<div class = "desDkeytext">
+		<label>密钥</label>
+		<input id="desDkeytext" type="text" name="desDkeytext" maxlength = "16" />
+		<button name = "button" type="button" onclick="clickDesDecrypt()">解密</button>
+	</div>
+	<div class = "desDplaintext">
+		<label>明文</label>
+		<input id="desDplaintext" type="text" name="desDplaintext" />
+	</div>
+<!--	<div class = "desFileDSelect">	
+	<input type="file" id="desDFile" name="desDFileS[]" multiple />  
+    <script type="text/javascript">  
+        var btn=document.getElementById('desDFile');  
+        btn.addEventListener('change', handleFileSelect, false);      
+    </script> 
+	</div>
+	<div class = "desFileDecrypt">
+		<button name = "button" type="button" onclick="desFileDecrypt()">文件解密</button>
+		<a href="" id="desDFileDownload">文件下载</a>
+	</div>
+-->	
+	</td>
+	</table>
+	<table align="center" width="100%" border="1" style='font-size:16px table-layout:fixed'><caption>DES构件组</caption>
+		<tr>
+			<td align="center"><label>IP(Input)</label><textarea id="IP_Input" name="IP_Input"></textarea></td>
+			<td align="center"><label>S_Out</label><textarea id="s32" name="s32"></textarea></td>	
+			<td align="center"><label>F_Out</label><textarea id="f32" name="f32"></textarea></td>	
+		</tr>
+		<tr>
+			<td align="center"><label>L_Out</label><textarea id="left32" name="left32"></textarea></td>	
+			<td align="center"><label>R_out</label><textarea id="right32" name="right32"></textarea></td>	
+			<td align="center"><label>轮密钥</label><textarea id="keys" name="keys"></textarea></td>		
+		</tr>
+	</table>
+ </div>
+	
+  <div style="width:960px;height:600px;">
+	<table align="center" width="100%" border="1" style='font-size:16px table-layout:fixed'><caption>AES加密解密</caption>
+	<td>AES加密
+	<div class = "aesEplaintext">
+		<label>明文</label>
+		<input id="aesEplaintext" type="text" name="aesEplaintext" maxlength = "32" style="width:260px;"/>
+	</div>
+	<div class = "aesEkeytext">
+		<label>密钥</label>
+		<input id="aesEkeytext" type="text" name="aesEkeytext" maxlength = "32" style="width:260px;"/>
+		<button name = "button" type="button" onclick="clickEncrypt()">加密</button>
+	</div>
+	<div class = "aesEciphertext">
+		<label>密文</label>
+		<input id="aesEciphertext" type="text" name="aesEciphertext" maxlength = "32" style="width:260px;"/>
+	</div>
+	<div class = "aesFileESelect">	
+	<input type="file" id="aesFile" name="aesFiles[]" multiple />  
+    <script type="text/javascript">  
+        var btn=document.getElementById('aesFile');  
+        btn.addEventListener('change', handleFileSelect, false);      
+    </script> 
+
+	</div>
+	<div class = "aesFileEncrypt">
+		<button name = "button" type="button" onclick="aesFileEncrypt()">文件加密</button>
+		<a href="" id="aesEFileDownload">文件下载</a>
+	</div>
+	</td>
+	<td>AES解密
+	<div class = "aesDciphertext">
+		<label>密文</label>
+		<input id="aesDciphertext" type="text" name="aesDciphertext" maxlength = "32" style="width:260px;"/>
+	</div>
+	<div class = "aesDkeytext">
+		<label>密钥</label>
+		<input id="aesDkeytext" type="text" name="aesDkeytext" maxlength = "32" style="width:260px;"/>
+		<button name = "button" type="button" onclick="clickDecrypt()">解密</button>
+	</div>
+	<div class = "aesDplaintext">
+		<label>明文</label>
+		<input id="aesDplaintext" type="text" name="aesDplaintext" maxlength = "32" style="width:260px;"/>
+	</div>
+	<div class = "aesFileDSelect">	
+	<input type="file" id="aesDFile" name="aesDFiles[]" multiple />  
+    <script type="text/javascript">  
+        var btn=document.getElementById('aesDFile');  
+        btn.addEventListener('change', handleFileSelect, false);      
+    </script> 
+
+	</div>
+	<div class = "aesFileDecrypt">
+		<button name = "button" type="button" onclick="aesFileDecrypt()">文件解密</button>
+		<a href="" id="aesDFileDownload">文件下载</a>
+	</div>
+	</td>
+	</table>
+	<table align="center" width="100%" border="1" style='font-size:16px table-layout:fixed'><caption>AES构件组</caption>
+		<tr>
+			<td align="center"><label>SubBytes</label><textarea id="aesSubBytesShow" name="aesSubBytesShow"></textarea></td>
+			<td align="center"><label>ShiftRows</label><textarea id="aesShiftRowsShow" name="aesShiftRowsShow"></textarea></td>	
+		</tr>
+		<tr>
+			<td align="center"><label>MixColumns</label><textarea id="aesMixColumnsShow" name="aesMixColumnsShow"></textarea></td>	
+			<td align="center"><label>轮密钥</label><textarea id="aesKeys" name="aesKeys"></textarea></td>		
+		</tr>
+	</table>
+ </div>
+ <a name="bottom"></a>
+ </BODY>
+</HTML>
